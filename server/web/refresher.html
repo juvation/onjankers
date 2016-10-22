@@ -1,0 +1,36 @@
+<html>
+
+<head>
+<title>Neutrino Application</title>
+
+<script language="javascript" type="text/javascript">
+
+document.addEventListener
+(
+	"DOMContentLoaded",
+	function ()
+	{
+		if (opener)
+		{
+			opener.refreshAdsView ();
+		}
+		else
+		{
+			alert ("can't find opener");
+		}
+		
+		window.close ();
+	},
+	false
+);
+
+</script>
+
+<!-- view JS gets inserted above -->
+
+</head>
+
+<body>
+</body>
+
+</html>

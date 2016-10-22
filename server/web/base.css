@@ -1,0 +1,220 @@
+/* application specific global styles go here */
+
+body, html {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  background-image:url('assets/linen.png');
+  color:#d3d3d3;
+  min-height:100%;
+}
+
+p, ol, ul, li {
+ 	color: #d3d3d3;
+    font-size: small;
+}
+
+.header{
+	width: 100%;
+    background-color: rgba(0,0,0,0.3);
+	height:65px;
+	position: fixed;
+	padding-top: 10px;
+}
+
+.container{
+	overflow:hidden;
+	position:relative;
+	top:75px;
+	height:auto;
+    width: 900px;
+  
+    padding-bottom:0;
+    background-color: rgba(256,256,256,0.1);
+}
+
+h1, h3{
+	float:left;
+	margin-right:40px;
+	margin-left:20px;
+	margin-top:0px;
+}
+
+h3 {
+	margin-left:10px;
+}
+
+.box {
+	height: 170px;
+    width: 300px;
+    position:fixed;
+    top:75px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border-left-style:solid;
+    border-left-width:1px;
+    border-left-color:rgba(0,0,0,0.2);
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:rgba(0,0,0,0.2);
+    margin-top: 15px;
+    margin-left: 15px;
+    padding:15px;
+    z-index:5;
+}
+
+.box-small {
+	position:fixed;
+	top:290px;
+
+	height: 50px;
+    width: 300px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border-left-style:solid;
+    border-left-width:1px;
+    border-left-color:rgba(0,0,0,0.2);
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:rgba(0,0,0,0.2);
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-left:30px;
+    padding-top:15px;
+    padding-bottom:15px;
+    z-index:5;
+}
+
+.input-field {
+	height: 25px;
+    width: 270px;
+    float:left;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border-left-style:solid;
+    border-left-width:1px;
+    border-left-color:rgba(0,0,0,0.2);
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:rgba(0,0,0,0.2);
+    border-bottom:hidden;
+    border-right:hidden;
+    color:#d3d3d3;
+    margin-top: 15px;
+    margin-left: 15px;
+    padding:15px;
+}
+
+.btn {
+	width: 100px;
+    background-color: rgba(0,0,0,0.1);
+	color:white;
+	border-radius: 5px;
+    border-left-style:solid;
+    border-left-width:1px;
+    border-left-color:rgba(0,0,0,0.2);
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:rgba(0,0,0,0.2);
+    border-bottom:hidden;
+    border-right:hidden;
+	font-size: 14px;
+	margin: 15px;
+	padding-bottom:5px;
+	height: 30px;
+	float:right;
+}
+
+.btn:hover {
+    background-color: rgba(0,0,0,0.3);	
+}
+
+.btn:active {
+	background-color: rgba(0,0,0,0.1);
+	border-right-style:solid;
+    border-right-width:1px;
+    border-right-color:rgba(0,0,0,0.2);
+    border-bottom-style:solid;
+    border-bottom-width:1px;
+    border-bottom-color:rgba(0,0,0,0.2);
+    border-top:hidden;
+    border-left:hidden;
+    padding-bottom:4px;
+    margin-right:14px;	
+}
+
+.feed{
+	width: 520px;
+	position: relative;
+    left: 365px;
+    top:15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border-left-style:solid;
+    border-left-width:1px;
+    border-left-color:rgba(0,0,0,0.2);
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:rgba(0,0,0,0.2);
+}
+
+.title{
+	width:100%;
+	display: inline-block;
+	color: #d3d3d3;
+	border-bottom: solid;
+	border-color: #6c6c6c;
+	border-width:1px;
+}
+
+.jankers-list{
+
+}
+
+.user{
+	padding-right:10px;
+	float: left;
+	margin:10px;
+	border-right: solid;
+	border-color: #6c6c6c;
+	border-width:1px;
+}
+
+.jankers{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: sans-serif;
+	font-size: small;
+	color: #d3d3d3;
+	border-bottom: solid;
+	border-color: #6c6c6c;
+	border-width:1px;
+}
+
+.posted {
+	width: 300px;
+	padding-top:1px;
+	padding-bottom:1px;
+	padding-left:40px;
+	xdisplay:block;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 5px;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-left-color:rgba(0,0,0,0.2);
+	border-top-style:solid;
+	border-top-width:1px;
+	border-top-color:rgba(0,0,0,0.2);
+	z-index:2;
+}
+
+#nu-page-container {
+  display: none;
+}
+
+

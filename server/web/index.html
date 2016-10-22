@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<title>Neutrino Application</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet" type="text/css" media="all" nu-href="neutrino/css/neutrino.css">	   
+<link id="application-css" rel="stylesheet" type="text/css" media="all" nu-href="base.css">	   
+
+
+<!-- JAVASCRIPT -->
+
+<!-- Load jQuery 1.7.1 from CDN if you want or need it (and optionally, install and load locally) -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+
+<script src="neutrino/js/neutrino.js" type="text/javascript"></script>
+<script id="application-js" src="js/application.js" type="text/javascript"></script>
+
+
+<!-- IMMEDIATE -->
+
+<script language="javascript" type="text/javascript">
+
+var	gApplication = null;
+
+function
+main ()
+{
+  gApplication = new Application ();
+  // gApplication.nuDevMode = false; // be sure this is set before production deployment
+  gApplication.start ();
+}
+
+document.addEventListener ("DOMContentLoaded", main, false);
+
+</script>
+
+<!-- view JS gets inserted above -->
+
+</head>
+
+<body
+	nu-app="You're On Jankers!"
+  xnu-start-page="show"
+  xnu-start-page-delay="100"
+	xnu-progress-view="circlespinner"
+	>
+	
+<div class="header">	
+	<div>
+		<h1>On Jankers</h1> 
+		<p>
+	    	Jankers are defined as: <em>"The punishment of minor infringements by the imposition of tedious duties."</em><br>
+		    Initially used in the British army, but more commonly found in civilian married life...
+	    </p>
+	</div>
+</div>
+
+	
+	<div class="box" nu-view="newjankers" nu-dynamic="true">
+		<div>Put someone on Jankers:</div>
+		<form
+			method="POST"
+			action="$application.serverhost;/onjankers/jankers/create"
+			nu-action="(submit) call: onFormSubmission"
+			>
+			<div><input class="input-field" name="who" type="text" required="true" placeholder="Name"/></div>
+			<div><input class="input-field" name="why" type="text" required="true" placeholder="Jankers"/></div>
+			<div><input class="btn" type="submit" value="Post"/></div>
+		</form>
+	</div>
+	
+	<div nu-view="jankers" nu-dynamic="true">
+		<nu:json url="$application.serverhost;/onjankers/jankers/all" prefix="json">
+			<nu:if lhs="$json.type;" rhs="list">
+				<div class="box-small">
+					Total Jankers
+					<div><h1>$json.meta.size;</h1></div>
+				</div>
+				
+	<div class="container">
+				<div class="feed">
+					<div class="title"><h3>Jankers</h3></div>
+					<div class="jankers-list">			
+						<nu:list key="json.data" prefix="jankers">
+							<div class="user">$jankers.who; </div>
+							<div class="jankers">$jankers.why;</div>
+						</nu:list>
+					</div>
+				</div>
+				</div>
+			</nu:if>
+			<nu:ifnot lhs="$json.type;" rhs="list">
+				<div>error getting jankerses from $application.serverhost;</div>
+			</nu:ifnot>
+		</nu:json>
+
+
+
+	<div nu-view="confirmation" class="posted">
+		<p>Congratulations on assigning new Jankers</p>
+	</div>
+
+	<!-- container page markup -->
+	<div id="nu-page-container"></div>
+	
+	<!-- loader view, if you want it -->
+	<div nu-view="circlespinner:hc" id="spinner-block" class="circle-spinner nu-invisible"></div>
+
+</div>
+</body>
+
+</html>
